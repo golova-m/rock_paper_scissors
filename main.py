@@ -6,7 +6,7 @@ class Main(Frame):
         super(Main, self).__init__(window)
         self.startUI()
 
-    def start_btn(self):
+    def btn_start(self):
         btn_rock = Button(window, text='Камень', command=lambda x=1:self.btn_click(x))
         btn_scissors = Button(window, text='Ножницы', command=lambda x=1:self.btn_click(x))
         btn_paper = Button(window, text='Бумага', command=lambda x=1:self.btn_click(x))
@@ -15,7 +15,7 @@ class Main(Frame):
         btn_scissors.place(x=150, y=250, width=100, height=50)
         btn_paper.place(x=290, y=250, width=100, height=50)
 
-    def start_lbl(self):
+    def lbl_start(self):
         self.lbl_start = Label(window, text='Начинаем!')
         self.lbl_score = Label(window, justify="left", text=f"Побед: {self.win}\nПроигрышей:{self.lose}\nДружба: {self.drow}")
 
@@ -43,8 +43,8 @@ class Main(Frame):
     def startUI(self):
         self.win = self.drow = self.lose = 0
 
-        self.start_btn()
-        self.start_lbl()
+        self.btn_start()
+        self.lbl_start()
         
 
 if __name__ == '__main__':
