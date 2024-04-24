@@ -16,11 +16,11 @@ class Main(Frame):
         btn_paper.place(x=290, y=250, width=100, height=50)
 
     def lbl_start(self):
-        self.lbl_start = Label(window, text='Начинаем!')
+        self.lbl_start = Label(window, text='Начинаем!\nВаш выбор:')
         self.lbl_score = Label(window, justify="left", text=f"Побед: {self.win}\nПроигрышей:{self.lose}\nДружба: {self.drow}")
 
-        self.lbl_start.place(x=100, y=150)
-        self.lbl_score.place(x=165, y=50)
+        self.lbl_start.place(x=100, y=50)
+        #self.lbl_score.place(x=165, y=150)
 
     def btn_click(self, play_choise):
         comp_choise = rdm.randint(1, 3)
