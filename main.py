@@ -1,12 +1,13 @@
 from tkinter import *
 import random as rdm
+import ui_base
 
 class Main(Frame):
     def __init__(self, window):
         super(Main, self).__init__(window)
-        self.startUI()
+        #self.startUI()
 
-    def btn_start(self):
+    def btn_start(self, window):
         btn_rock = Button(window, text='Камень', command=lambda x=1:self.btn_click(x))
         btn_scissors = Button(window, text='Ножницы', command=lambda x=1:self.btn_click(x))
         btn_paper = Button(window, text='Бумага', command=lambda x=1:self.btn_click(x))
@@ -43,15 +44,16 @@ class Main(Frame):
     def startUI(self):
         self.win = self.drow = self.lose = 0
 
-        self.btn_start()
-        self.lbl_start()
+        self.btn_start(window)
+        self.lbl_start(window)
         
 
 if __name__ == '__main__':
-    window = Tk()
-    window.title('Rock Scissors Paper')
-    window.geometry('400x400+300+300')
-    window.resizable(False, False)
+    #window = Tk()
+    #window.title('Rock Scissors Paper')
+    #window.geometry('400x400+300+300')
+    #window.resizable(False, False)   
+    window = ui_base.create_window()
     app = Main(window)
     app.pack()
     window.mainloop()
